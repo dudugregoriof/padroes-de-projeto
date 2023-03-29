@@ -1,0 +1,30 @@
+public class CalculadoraValorTotal {
+    private double ipi;
+    private String codigo1;
+    private double valor1;
+    private int quantidade1;
+    private String codigo2;
+    private double valor2;
+    private int quantidade2;
+
+    public CalculadoraValorTotal(double ipi, String codigo1, double valor1, int quantidade1, String codigo2, double valor2, int quantidade2) {
+        this.ipi = ipi;
+        this.codigo1 = codigo1;
+        this.valor1 = valor1;
+        this.quantidade1 = quantidade1;
+        this.codigo2 = codigo2;
+        this.valor2 = valor2;
+        this.quantidade2 = quantidade2;
+    }
+
+    public double calcularValorTotal() {
+        double valorTotal = (valor1 * quantidade1 + valor2 * quantidade2) * (ipi / 100.0 + 1.0);
+        return valorTotal;
+    }
+
+    public static void main(String[] args) {
+        CalculadoraValorTotal calculadora = new CalculadoraValorTotal(10.0, "P1", 100.0, 2, "P2", 50.0, 3);
+        double valorTotal = calculadora.calcularValorTotal();
+        System.out.println("Valor total a pagar: " + valorTotal);
+    }
+}
