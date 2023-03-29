@@ -1,0 +1,25 @@
+public class SalarioMinimo {
+
+    private double salarioMinimo;
+    private double salarioUsuario;
+
+    public SalarioMinimo(double salarioMinimo, double salarioUsuario) {
+        this.salarioMinimo = salarioMinimo;
+        this.salarioUsuario = salarioUsuario;
+    }
+
+    public double calcularQuantidadeSalariosMinimos() {
+        return salarioUsuario / salarioMinimo;
+    }
+
+    public static void main(String[] args) {
+        double valorSalarioMinimo = 1320.0;
+        double valorSalarioUsuario = 3300.0;
+
+        SalarioMinimo salario = new SalarioMinimo(valorSalarioMinimo, valorSalarioUsuario);
+
+        double quantidadeSalariosMinimos = salario.calcularQuantidadeSalariosMinimos();
+
+        System.out.println("O usuário ganha " + quantidadeSalariosMinimos + " salários mínimos.");
+    }
+}
