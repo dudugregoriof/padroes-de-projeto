@@ -1,0 +1,27 @@
+public class IdadeEmDias {
+    private int anos;
+    private int meses;
+    private int dias;
+
+    public IdadeEmDias(int anos, int meses, int dias) {
+        this.anos = anos;
+        this.meses = meses;
+        this.dias = dias;
+    }
+
+    public int calcularIdadeEmDias() {
+        int totalDias = 0;
+
+        totalDias += anos * 365;
+        totalDias += meses * 30;
+        totalDias += dias;
+
+        return totalDias;
+    }
+
+    public static void main(String[] args) {
+        IdadeEmDias idade = new IdadeEmDias(3, 2, 15);
+        int idadeEmDias = idade.calcularIdadeEmDias();
+        System.out.println(idadeEmDias + " dias");
+    }
+}
